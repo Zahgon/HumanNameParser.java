@@ -37,78 +37,23 @@ import java.util.Objects;
 public final class HumanNameParserBuilder {
 
     // constants with default values
-    public static final List<String> DEFAULT_SALUTATIONS = Collections.unmodifiableList(
-            Arrays.asList(
-                    "mr",
-                    "master",
-                    "mister",
-                    "mrs",
-                    "miss",
-                    "ms",
-                    "dr",
-                    "prof",
-                    "rev",
-                    "fr",
-                    "judge",
-                    "honorable",
-                    "hon"));
-    public static final List<String> DEFAULT_POSTNOMINALS = Collections.unmodifiableList(
-            Arrays.asList(
-                    "phd",
-                    "ph.d.",
-                    "ph.d",
-                    "esq",
-                    "esquire",
-                    "apr",
-                    "rph",
-                    "pe",
-                    "md",
-                    "ma",
-                    "dmd",
-                    "cme",
-                    "dds",
-                    "cpa",
-                    "dvm"));
-    public static final List<String> DEFAULT_PREFIXES = Collections.unmodifiableList(
-            Arrays.asList(
-                    "bar",
-                    "ben",
-                    "bin",
-                    "da",
-                    "dal",
-                    "de la",
-                    "de",
-                    "del",
-                    "der",
-                    "di",
-                    "ibn",
-                    "la",
-                    "le",
-                    "san",
-                    "st",
-                    "ste",
-                    "van",
-                    "van der",
-                    "van den",
-                    "vel",
-                    "von"));
-    public static final List<String> DEFAULT_SUFFIXES = Collections.unmodifiableList(
-            Arrays.asList(
-                    "jr",
-                    "sr",
-                    "2",
-                    "ii",
-                    "iii",
-                    "iv",
-                    "v",
-                    "senior",
-                    "junior"));
+    public static final List<String> DEFAULT_SALUTATIONS = Collections.unmodifiableList(Arrays.asList("mr", "master", "mister", "mrs", "miss", "ms", "dr", "prof", "rev", "fr", "judge", "honorable", "hon"));
+
+    public static final List<String> DEFAULT_POSTNOMINALS = Collections.unmodifiableList(Arrays.asList("phd", "ph.d.", "ph.d", "esq", "esquire", "apr", "rph", "pe", "md", "ma", "dmd", "cme", "dds", "cpa", "dvm"));
+
+    public static final List<String> DEFAULT_PREFIXES = Collections.unmodifiableList(Arrays.asList("bar", "ben", "bin", "da", "dal", "de la", "de", "del", "der", "di", "ibn", "la", "le", "san", "st", "ste", "van", "van der", "van den", "vel", "von"));
+
+    public static final List<String> DEFAULT_SUFFIXES = Collections.unmodifiableList(Arrays.asList("jr", "sr", "2", "ii", "iii", "iv", "v", "senior", "junior"));
 
     // build values
     private final Name name;
+
     private List<String> salutations;
+
     private List<String> postnominals;
+
     private List<String> prefixes;
+
     private List<String> suffixes;
 
     /**
@@ -136,27 +81,7 @@ public final class HumanNameParserBuilder {
      * @return a {@code HumanNameParserParser}
      */
     public HumanNameParserParser build() {
-        if (this.salutations == null) {
-            this.salutations = formatToRegex(DEFAULT_SALUTATIONS);
-        }
-        if (this.postnominals == null) {
-            this.postnominals = formatToRegex(DEFAULT_POSTNOMINALS);
-        }
-        if (this.prefixes == null) {
-            this.prefixes = formatToRegex(DEFAULT_PREFIXES);
-        }
-        if (this.suffixes == null) {
-            this.suffixes = formatToRegex(DEFAULT_SUFFIXES);
-        }
-        final HumanNameParserParser parser = new HumanNameParserParser(
-            name,
-            salutations,
-            postnominals,
-            prefixes,
-            suffixes
-        );
-        parser.parse();
-        return parser;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private List<String> formatToRegex(List<String> list) {
@@ -168,62 +93,38 @@ public final class HumanNameParserBuilder {
     }
 
     // salutations
-
     public HumanNameParserBuilder withSalutations(List<String> salutations) {
-        Objects.requireNonNull(salutations);
-        this.salutations = salutations;
-        return this;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public HumanNameParserBuilder withExtraSalutations(List<String> salutations) {
-        Objects.requireNonNull(salutations);
-        this.salutations = new ArrayList<>(salutations);
-        this.salutations.addAll(DEFAULT_SALUTATIONS);
-        return this;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     // postnominals
-
     public HumanNameParserBuilder withPostnominals(List<String> postnominals) {
-        Objects.requireNonNull(postnominals);
-        this.postnominals = postnominals;
-        return this;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public HumanNameParserBuilder withExtraPostnominals(List<String> postnominals) {
-        Objects.requireNonNull(postnominals);
-        this.postnominals = new ArrayList<>(postnominals);
-        this.postnominals.addAll(DEFAULT_POSTNOMINALS);
-        return this;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     // prefixes
-    
     public HumanNameParserBuilder withPrefixes(List<String> prefixes) {
-        Objects.requireNonNull(prefixes);
-        this.prefixes = prefixes;
-        return this;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public HumanNameParserBuilder withExtraPrefixes(List<String> prefixes) {
-        Objects.requireNonNull(prefixes);
-        this.prefixes = new ArrayList<>(prefixes);
-        this.prefixes.addAll(DEFAULT_PREFIXES);
-        return this;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     // suffixes
-    
     public HumanNameParserBuilder withSuffixes(List<String> suffixes) {
-        Objects.requireNonNull(suffixes);
-        this.suffixes = suffixes;
-        return this;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public HumanNameParserBuilder withExtraSuffixes(List<String> suffixes) {
-        Objects.requireNonNull(suffixes);
-        this.suffixes = new ArrayList<>(suffixes);
-        this.suffixes.addAll(DEFAULT_SUFFIXES);
-        return this;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

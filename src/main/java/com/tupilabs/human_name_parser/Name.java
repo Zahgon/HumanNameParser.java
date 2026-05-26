@@ -37,7 +37,7 @@ import java.util.regex.Pattern;
 public class Name {
 
     /**
-     * Encapsulated string. Not immutable! 
+     * Encapsulated string. Not immutable!
      */
     private String str;
 
@@ -54,7 +54,7 @@ public class Name {
      * @return encapsulated string
      */
     public String getStr() {
-        return str;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -62,8 +62,7 @@ public class Name {
      * @param str string value
      */
     public void setStr(String str) {
-        this.str = str;
-        this.norm();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -77,32 +76,7 @@ public class Name {
      * @return the part of the namestring that got chopped off
      */
     public String chopWithRegex(String regex, int submatchIndex) {
-        String chopped = "";
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(this.str);
-
-        // workaround for numReplacements in Java
-        int numReplacements = 0;
-        while (matcher.find()) {
-            numReplacements++;
-        }
-
-        // recreate or the groups are gone
-        pattern = Pattern.compile(regex);
-        matcher = pattern.matcher(this.str); 
-        if (matcher.find()) {
-
-            boolean subset = matcher.groupCount() > submatchIndex;
-            if (subset) {
-                this.str = this.str.replaceAll(regex, " ");
-                if (numReplacements > 1) {
-                    throw new ParseException("The regex being used to find the name has multiple matches.");
-                }
-                this.norm();
-                return matcher.group(submatchIndex).trim();
-            }
-        }
-        return chopped;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -114,13 +88,7 @@ public class Name {
      * @throws ParseException if a regex fails or a condition is not expected
      */
     public void flip(String flipAroundChar) throws ParseException {
-        String[] parts = this.str.split(flipAroundChar);
-        if (parts.length == 2) {
-            this.str = String.format("%s %s", parts[1], parts[0]);
-            this.norm();
-        } else if (parts.length > 2) {
-            throw new ParseException("Can't flip around multiple '" + flipAroundChar + "' characters in namestring.");
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -130,9 +98,6 @@ public class Name {
      * whitespace chars to " ".</p>
      */
     public void norm() {
-        this.str = this.str.trim();
-        this.str = this.str.replaceAll("\\s+", " ");
-        this.str = this.str.replaceAll(",$", " ");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }
